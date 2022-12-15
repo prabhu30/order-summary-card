@@ -1,0 +1,193 @@
+:root {
+  --clr-primary-300: hsl(225, 100%, 94%);
+  --clr-primary-500: hsl(245, 75%, 52%);
+
+  --clr-neutral-300: hsl(225, 100%, 98%);
+  --clr-neutral-500: hsl(224, 23%, 55%);
+  --clr-neutral-900: hsl(223, 47%, 23%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* general styling */
+body {
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+  text-align: center;
+  background-color: var(--clr-primary-300);
+  background-image: url(images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  display: grid;
+  place-content: center;
+}
+
+.product {
+  max-width: 20rem;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+
+  display: grid;
+  gap: 1.5rem;
+}
+
+.product__details {
+  margin: 0 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* .product__summary {
+  margin-bottom: 0;
+  padding-bottom: 0;
+} */
+
+.product__desc {
+  color: var(--clr-neutral-500);
+}
+
+.product__plan-details {
+  background-color: var(--clr-neutral-300);
+  border-radius: 0.875rem;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product__plan-details>div {
+  display: flex;
+  gap: 1rem;
+}
+
+.product__cost {
+  color: var(--clr-neutral-500);
+}
+
+button {
+  font-weight: bold;
+  color: var(--clr-neutral-300);
+  background-color: var(--clr-primary-500);
+  padding: 0.8125rem;
+  border-style: none;
+  border-radius: 0.75rem;
+  box-shadow: 0.1rem 1rem 1rem hsl(223, 62%, 82%);
+}
+
+.product__cancel-order {
+  color: var(--clr-neutral-500);
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+
+/* active states */
+.product__change-plan:hover {
+  text-decoration: none;
+  color: var(--clr-primary-500);
+  opacity: 0.7;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.product__cancel-order:hover {
+  color: var(--clr-neutral-900);
+}
+
+/* media queries */
+
+@media (min-width: 600px) {
+  body {
+    background-image: url(images/pattern-background-desktop.svg);
+    background-size: contain;
+  }
+
+  .product {
+    max-width: 25rem;
+  }
+
+  .product__details {
+    margin: 0 3rem;
+  }
+}
